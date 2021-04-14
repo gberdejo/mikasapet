@@ -9,5 +9,6 @@ module.exports = function({middlewares,UserController}){
 
     router.post('/users',UserController.createUsers.bind(UserController));
     router.put('/users/:id',UserController.updateUsers.bind(UserController));
+    router.delete('/users/:id',UserController.deleteUsers.bind(UserController));
     return router;
 }

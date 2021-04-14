@@ -2,8 +2,8 @@ class UserController{
     constructor({UserModel}){
         this._userModel = UserModel;
     }
-    async getHome(req,res){
-        return await res.render(ROOT_PATH_VIEWS+'/links/home',);
+    getHome (req,res){
+        return res.render(ROOT_PATH_VIEWS+'/links/home',);
     }
     async getUsers(req,res){
         const user = await this._userModel.getUsers();
@@ -27,11 +27,12 @@ class UserController{
     };
     async deleteUsers(req,res){
         const status = await this._userModel.deleteUsers(req.params.id);
-        console.log( status);
-        return res.json({
-            message: "todo bien",
-            status: status
-        });
+        console.log(status);
+        if(status == 1){
+            return res.json({success:"Se Elimino!"})
+        }{
+            return res.json({info:"Ya se elimino anteriormente"});
+        }
     }
 
 
