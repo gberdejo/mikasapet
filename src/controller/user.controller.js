@@ -18,25 +18,22 @@ class UserController{
         });
     }
     async updateUsers(req,res){
-        const info = await this._userModel.updateUsers(req.params.id,req.body);
-        console.log(info);
-        if(info == 1){
-            return res.json({
-                success : "se actualizo",
-                data: info,
-            });
-        }else if(info == 0){
-            
-            return res.json({
-                success : "No se actualizo, los datos ya son existentes",
-                data: info
-            });
-        }else{
-            return res.json({
-                message  : "Algo salio mal"
-            })
+        const status = await this._userModel.updateUsers(req.params.id,req.body);
+        if(status == 1){
+            return res.json({success : "se actualizo"});
+        }{   
+            return res.json({success : "No se actualizo, los datos ya son existentes",});
         }
+    };
+    async deleteUsers(req,res){
+        const status = await this._userModel.deleteUsers(req.params.id);
+        console.log( status);
+        return res.json({
+            message: "todo bien",
+            status: status
+        });
     }
+
 
 }
 module.exports = UserController;

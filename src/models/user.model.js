@@ -28,5 +28,14 @@ class UserModel{
             console.log(error);
         }
     }
+    async deleteUsers(id){
+        try {
+            return await this._user.destroy({
+                where: {id: id}
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 module.exports = UserModel;
