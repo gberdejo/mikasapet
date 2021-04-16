@@ -2,8 +2,9 @@ class UserController{
     constructor({UserModel}){
         this._userModel = UserModel;
     }
-    getHome (req,res){
-        return res.render(ROOT_PATH_VIEWS+'/links/home',);
+    async getHome(req,res){
+        const user = await this._userModel.getUsers();
+        return res.render(ROOT_PATH_VIEWS+'/links/home',{user});
     }
     async getUsers(req,res){
         const user = await this._userModel.getUsers();

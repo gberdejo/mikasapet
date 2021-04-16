@@ -28,7 +28,29 @@
   </a>
 </div>
 <br><br>
-<div class="card-group">
+<div class="container">
+
+<div class="row row-cols-1 row-cols-sm-4 g-3">
+    {{#each user}}
+  <div class="col">
+    <div class="card">
+    <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <img src="https://images.ctfassets.net/sa0sroutfts9/3HCwCX7Xt73tL6kGkIWM4k/6ec70a5fc39bb1b1522072d37c63667f/GO-SOLUTIONS-Recipe-Image-Dog-Skin_Coat-Care-Salmon-With-Grains.png" 
+    class="img-fluid" alt="card-img-bottom">
+    <a class="text-muted card-link">price: 152.99</a>
+    <a href="#" class="btn btn-success card-link">Add</a>
+    </div>
+    </div>
+  </div>
+    {{/each}}
+</div>
+</div>
+<br><br>
+<div class="container-fluid">
+    <div class="card-group">
   <div class="card">
     <img src="http://static1.squarespace.com/static/5799536020099e4250405d3f/579a68dd3e00beeff59172ef/5a020e62ec212d1c2e3fe655/1510084559929/croquetas+perro.jpg?format=1500w"
      class="card-img-top" alt="card-group-image">
@@ -56,4 +78,5 @@
         This card has even longer content than the first to show that equal height action.</p>
     </div>
   </div>
+</div>
 </div>
