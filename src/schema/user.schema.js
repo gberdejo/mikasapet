@@ -6,13 +6,13 @@ class User {
     getInit(){
         const user = this._db.define('users',{
             userId: {
-                type: Sequelize.INTEGER,//INT
+                type: Sequelize.INTEGER,
                 primaryKey: true,
                 allowNull:false,
-                autoIntement:true//AUTO INCREMENT
+                autoIntement:true
             },
             userEmail: {
-                type: Sequelize.STRING,//VARCHAR
+                type: Sequelize.STRING,
                 allowNull:false
             },
             userPassword:{
@@ -25,19 +25,19 @@ class User {
             },
             userLastname:{
                 type:Sequelize.STRING,
-                allowNull:false//NOT NULL
+                allowNull:false
             },
             rolId:{
                 type:Sequelize.INTEGER,
-                allowNull:false//NOT NULL
+                allowNull:false
             },
             userCreation:{
-                type: DataTypes.DATE,//TIPO DE DATO 2020/02/20 
-                defaultValue: DataTypes.NOW //FECHA DE HOY
+                type: DataTypes.DATE,
+                defaultValue: DataTypes.NOW 
             }
         },{
             
-            timestamps:false//siempre false
+            timestamps:false
         });
         user.sync({force : false}).
             then(()=>{
