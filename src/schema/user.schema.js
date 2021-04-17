@@ -4,20 +4,40 @@ class User {
         this._db = mySqlDB;
     }
     getInit(){
-        const user = this._db.define('tb_users',{
-            id: {
-                type: Sequelize.INTEGER,
-                primaryKey: true
+        const user = this._db.define('users',{
+            userId: {
+                type: Sequelize.INTEGER,//INT
+                primaryKey: true,
+                allowNull:false,
+                autoIntement:true//AUTO INCREMENT
             },
-            name: {
-                type: Sequelize.TEXT
+            userEmail: {
+                type: Sequelize.STRING,//VARCHAR
+                allowNull:false
             },
-            lastname:{
-                type: Sequelize.TEXT
+            userPassword:{
+                type: Sequelize.STRING,
+                allowNull:false
+            },
+            userName:{
+                type:Sequelize.STRING,
+                allowNull:false
+            },
+            userLastname:{
+                type:Sequelize.STRING,
+                allowNull:false//NOT NULL
+            },
+            rolId:{
+                type:Sequelize.INTEGER,
+                allowNull:false//NOT NULL
+            },
+            userCreation:{
+                type: DataTypes.DATE,//TIPO DE DATO 2020/02/20 
+                defaultValue: DataTypes.NOW //FECHA DE HOY
             }
         },{
             
-            timestamps:false
+            timestamps:false//siempre false
         });
         user.sync({force : false}).
             then(()=>{
