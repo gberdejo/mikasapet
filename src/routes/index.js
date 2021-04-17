@@ -5,7 +5,7 @@ module.exports = function({middlewares,UserController}){
     router.use(middlewares);
 
     router.get('/',UserController.getHome.bind(UserController));
-
+    router.get('/registrar',UserController.pagRegistrar.bind(UserController));
     router.get('/users',UserController.getUsers.bind(UserController));
     router.post('/users',UserController.createUsers.bind(UserController));
     router.put('/users/:id',UserController.updateUsers.bind(UserController));
