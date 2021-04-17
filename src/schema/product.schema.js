@@ -4,7 +4,7 @@ class Product {
         this._db = mySqlDB;
     }
     getInit(){
-        const product = this._db.define('tb_products', {
+        const product = this._db.define('products', {
             productId:{
                 type: Sequelize.INTEGER,
                 primaryKey: true
