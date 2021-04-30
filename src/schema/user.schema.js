@@ -32,8 +32,8 @@ class User {
                 allowNull:false//NOT NULL
             },
             userCreation:{
-                type: DataTypes.DATE,//TIPO DE DATO 2020/02/20 
-                defaultValue: DataTypes.NOW //FECHA DE HOY
+                type: Sequelize.DATE,//TIPO DE DATO 2020/02/20 
+                defaultValue: Sequelize.NOW //FECHA DE HOY
             }
         },{
             

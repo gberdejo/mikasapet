@@ -20,7 +20,11 @@
       <a href="/" class="link-primary"><i class="fas fa-shopping-cart fa-3x me-4"></i></a>
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-primary" type="submit">Buscar</button>
-        <a href="/registrar"  class="link-primary"><i class="ms-4 fas fa-user-circle fa-3x"></i></a> 
+        {{#if user}}
+          <a class="link-primary"><i class="fas fa-user fa-3x ms-4"></i></a> 
+        {{else}}
+          <a href="/login"  class="link-primary"><i class="far fa-user-circle fa-3x ms-4"></i></a> 
+        {{/if}}
       </form>
     </div>
   </div>
